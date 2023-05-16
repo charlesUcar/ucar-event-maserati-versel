@@ -1,0 +1,132 @@
+#heroBanner {
+  width: 100%;
+  height: 450px;
+  max-height: 450px;
+  overflow: hidden;
+  @media (max-width: 856px) {
+    height: 330px;
+  }
+  @media (max-width: 768px) {
+    height: 280px;
+  }
+  @media (max-width: 654px) {
+    height: 245px;
+  }
+  @media (max-width: 414px) {
+    height: 220px;
+  }
+  .mainContainer {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: hsla(213, 68%, 15%, 1);
+    .slogan {
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+      color: #fff;
+      opacity: 0;
+      animation: heroFadeIn 1.5s ease-in-out;
+      animation-fill-mode: forwards;
+      //   animation-delay: 1s;
+      img {
+        width: auto;
+        @media (max-width: 856px) {
+          width: 95px;
+        }
+        @media (max-width: 576px) {
+          width: 75px;
+        }
+        @media (max-width: 480px) {
+          width: 65px;
+        }
+        @media (max-width: 376px) {
+          width: 55px;
+        }
+      }
+      span {
+        font-size: 60px;
+        font-weight: 600;
+        @media (max-width: 856px) {
+          font-size: 40px;
+        }
+        @media (max-width: 576px) {
+          font-size: 32px;
+        }
+        @media (max-width: 480px) {
+          font-size: 26px;
+        }
+        @media (max-width: 376px) {
+          font-size: 22px;
+        }
+      }
+    }
+  }
+
+  .heroImg {
+    opacity: 0;
+    transform: translateY(100%);
+    animation: heroImgFadeIn 1.5s ease-in-out;
+    animation-fill-mode: forwards;
+  }
+  .fromMask {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 45%;
+    background: linear-gradient(0deg, #0c2340 0%, rgba(12, 35, 64, 0) 86.13%);
+  }
+}
+
+@keyframes heroFadeIn {
+  0% {
+    height: 100%;
+    opacity: 0;
+  }
+  25% {
+    height: 100%;
+    opacity: 1;
+  }
+  50% {
+    height: 100%;
+    opacity: 1;
+  }
+  90% {
+    height: 35%;
+    opacity: 1;
+  }
+  100% {
+    height: 40%;
+    opacity: 1;
+  }
+}
+
+@keyframes heroImgFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  25% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  50% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  90% {
+    opacity: 1;
+    transform: translateY(-5%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}

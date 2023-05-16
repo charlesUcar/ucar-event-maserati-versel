@@ -1,18 +1,17 @@
-import CatCard from '../components/cards/cat/CatCard';
-import { mockCatCardProps } from '../components/cards/cat/CatCard.mocks';
+import HeroBanner from '../components/banners/hero/HeroBanner';
+import FooterLayout from '../components/layouts/footer/FooterLayout';
+import HeaderLayout from '../components/layouts/header/HeaderLayout';
 import PrimaryLayout from '../components/layouts/primary/PrimaryLayout';
-import SidebarLayout from '../components/layouts/sidebar/SidebarLayout';
-import styles from '../styles/Home.module.css';
+// import styles from '../styles/Home.module.css';
 import { NextPageWithLayout } from './page';
 
 const Home: NextPageWithLayout = () => {
   return (
-    <section className={styles.main}>
-      <h1 className={styles.title}>
-        Welcome to <a href="https://nextjs.org">Next.js!</a>
-      </h1>
-      <CatCard {...mockCatCardProps.base} />
-    </section>
+    <div className="row">
+      <main className="home">
+        <HeroBanner />
+      </main>
+    </div>
   );
 };
 
@@ -21,8 +20,9 @@ export default Home;
 Home.getLayout = (page) => {
   return (
     <PrimaryLayout>
-      <SidebarLayout />
+      <HeaderLayout />
       {page}
+      <FooterLayout />
     </PrimaryLayout>
   );
 };
