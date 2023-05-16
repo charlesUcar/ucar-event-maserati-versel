@@ -1,3 +1,5 @@
+import LastestArticles from '../components/articles/latest/LastestArticles';
+import SlideArticles from '../components/articles/slide/SlideArticles';
 import HeroBanner from '../components/banners/hero/HeroBanner';
 import FooterLayout from '../components/layouts/footer/FooterLayout';
 import HeaderLayout from '../components/layouts/header/HeaderLayout';
@@ -10,6 +12,8 @@ const Home: NextPageWithLayout = () => {
     <div className="row">
       <main className="home">
         <HeroBanner />
+        <LastestArticles />
+        <SlideArticles mainTitle="Maserati 國內/外試車" />
       </main>
     </div>
   );
