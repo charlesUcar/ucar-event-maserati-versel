@@ -8,6 +8,7 @@ const nextConfig = {
       'hips.hearstapps.com',
       'image.u-car.com.tw',
       'image.cache.u-car.com.tw',
+      'i3.ytimg.com',
     ],
   },
 };
