@@ -1,6 +1,7 @@
 import LastestArticles from '../components/articles/latest/LastestArticles';
 import SlideArticles from '../components/articles/slide/SlideArticles';
 import StoryArticles from '../components/articles/story/StoryArticles';
+import TypicleArticles from '../components/articles/typical/TypicalArticles';
 import VideoArticles from '../components/articles/video/VideoArticles';
 import HeroBanner from '../components/banners/hero/HeroBanner';
 import FooterLayout from '../components/layouts/footer/FooterLayout';
@@ -18,6 +19,8 @@ const Home: NextPageWithLayout = () => {
         <SlideArticles mainTitle="Maserati 國內/外試車" />
         <StoryArticles />
         <VideoArticles />
+        <SlideArticles mainTitle="Maserati 原廠認證中古車" />
+        <TypicleArticles />
       </main>
     </div>
   );
