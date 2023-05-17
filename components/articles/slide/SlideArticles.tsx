@@ -15,7 +15,7 @@ import 'swiper/css/free-mode';
 import 'swiper/css/scrollbar';
 
 // import required modules
-import { FreeMode, Scrollbar } from 'swiper';
+import { FreeMode, Keyboard, Mousewheel, Scrollbar } from 'swiper';
 
 const SlideArticles: React.FC<ISlideArticles> = ({ mainTitle }) => {
   const [articles, setArticles] = useState([
@@ -66,7 +66,11 @@ const SlideArticles: React.FC<ISlideArticles> = ({ mainTitle }) => {
               hide: false,
             }}
             freeMode={true}
-            modules={[Scrollbar, FreeMode]}
+            mousewheel={true}
+            keyboard={{
+              enabled: true,
+            }}
+            modules={[Scrollbar, FreeMode, Mousewheel, Keyboard]}
             className="mySwiper"
           >
             {articles.map((article) => {
