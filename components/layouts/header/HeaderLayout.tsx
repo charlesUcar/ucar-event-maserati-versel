@@ -1,6 +1,18 @@
 export interface IHeaderLayout {}
 
 const HeaderLayout: React.FC<IHeaderLayout> = () => {
+  const openSidebar = () => {
+    const sidebarEl = document.getElementById('mySidenav');
+    const mainEl = document.getElementById('myMain');
+    const modalEl = document.getElementById('navModal');
+    sidebarEl!.style.width = 240 + 'px';
+    mainEl!.style.display = 'fixed';
+    mainEl!.style.width = '100%';
+    mainEl!.style.height = '100vh';
+    mainEl!.style.overflow = 'hidden';
+    modalEl!.style.display = 'block';
+  };
+
   return (
     <div
       className="head scroll-to-fixed-fixed"
@@ -9,14 +21,14 @@ const HeaderLayout: React.FC<IHeaderLayout> = () => {
         position: 'fixed',
         top: 0 + 'px',
         marginLeft: 0 + 'px',
-        width: 100 + '%',
+        width: 516 + 'px',
         left: 0 + 'px',
       }}
     >
       <div className="wrap">
         <div className="span2">
           <div className="nav_switch">
-            <div className="bn_menu">
+            <div className="bn_menu" onClick={openSidebar}>
               <span>open</span>
             </div>
           </div>

@@ -1,0 +1,160 @@
+// Colors
+$black: hsl(0, 0%, 5%) !default;
+$gray-darker: hsl(0, 0%, 20%) !default;
+$gray-dark: hsl(0, 0%, 30%) !default;
+$gray: hsl(0, 0%, 50%) !default;
+$gray-light: hsl(0, 0%, 75%) !default;
+$gray-lighter: hsl(0, 0%, 90%) !default; // #e9ecef
+$white-ter: hsl(0, 0%, 75%) !default;
+$white-bis: hsl(0, 0%, 90%) !default;
+$white: hsl(0, 0%, 100%) !default;
+// $orange:       hsl(14, 100%, 53%) !default;
+$yellow: #FFD700 !default;
+$green: #239678 !default; // #06726d
+$green-light: #2DC09A !default;
+$green-dark: #366 !default;
+$blue: #487FCA !default; // primary #486FB5
+$blue-light: #2196F3 !default; // second
+$blue-dark: #003c9b !default;
+$blue-darker: #315A91 !default; // second #23527c
+$red: #900 !default; // danger
+$red-light: #D90000 !default;
+$orange: #F94633 !default;
+$darkmode: #111;
+$lightmode: #e9ecef; // #F2F2F2
+$linkcolor: #02b !default;
+$testcolor: #4480f0;
+$alpha: .8;
+// Size
+$size-1: 2.5rem !default; // 40px
+$size-2: 2rem !default; // 32px
+$size-3: 1.75rem !default; // 28px
+$size-4: 1.35rem !default; // 21.6px
+$size-5: 1.1rem !default; // 17.6px
+$size-6: 0.95rem !default; // 15.2px
+$size-7: 0.825rem !default; // 12.8px
+$size-small: 12px;
+$size-middle: 15px;
+$size-large: 24px;
+// Button
+@mixin button($background, $color, $border) {
+    display: block;
+    cursor: pointer;
+    line-height: initial;
+    text-align: center;
+    background: $background;
+    color: $color;
+    border: 1px solid $border;
+}
+
+@mixin btn-style-l {
+    border-radius: 5px;
+    padding: 12px 8px;
+    font-size: 0.875rem;
+}
+
+@mixin btn-style-m {
+    border-radius: 3px;
+    padding: 8px;
+    font-size: 0.875rem;
+}
+
+@mixin btn-style-s {
+    border-radius: 3px;
+    padding: 3px 6px;
+    font-size: 0.75rem;
+}
+
+// Style
+@mixin bg-gradient {
+    background: linear-gradient(to bottom, transparent 0%, black 100%);
+}
+
+@mixin Labels($color) {
+    background: white;
+    border: 1px solid $color;
+    border-radius: 36px;
+    color: $color;
+}
+
+@mixin tooltip($color) {
+    position: relative;
+    &:hover {
+        cursor: pointer;
+        &:before,
+        &:after {
+            opacity: 1;
+        }
+    }
+    &:before,
+    &:after {
+        opacity: 0;
+        transition: opacity 0.3s ease-out;
+    }
+    &:before {
+        content: attr(data-tooltip);
+        background: $color;
+        border-radius: 3px;
+        color: white;
+        font-size: $size-7;
+        line-height: 1;
+        margin-top: -18px;
+        padding: .5em .75em;
+        transform: translateX(-50%);
+        position: absolute;
+        left: 50%;
+        top: -50%;
+        white-space: pre;
+    }
+    &:after {
+        content: "";
+        transform: translateX(-50%);
+        position: absolute;
+        left: 50%;
+        top: -8px;
+        width: 0;
+        height: 0;
+        border-width: 8px;
+        border-style: solid;
+        border-color: $color transparent transparent transparent;
+    }
+}
+
+// Layout
+@mixin center($xy:xy) {
+    @if $xy==xy {
+        left: 50%;
+        top: 50%;
+        bottom: auto;
+        right: auto;
+        transform: translateX(-50%) translateY(-50%);
+    }
+    @else if $xy==x {
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%);
+    }
+    @else if $xy==y {
+        top: 50%;
+        bottom: auto;
+        transform: translateY(-50%);
+    }
+}
+
+@mixin overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    font-size: 1.5em;
+    text-align: center;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
