@@ -8,7 +8,7 @@ const HeroBanner: React.FC<IHeroBanner> = () => {
     <div id={styles.heroBanner}>
       <div className={styles.mainContainer}>
         <Image
-          src="/../public/asset/image/hero.jpg"
+          src="/../public/asset/image/Maserati_Grecale_hero_desktop.jpg"
           alt="hero"
           className={styles.heroImg}
           fill={true}
