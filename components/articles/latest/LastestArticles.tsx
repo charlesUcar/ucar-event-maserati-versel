@@ -1,43 +1,45 @@
 import Image from 'next/image';
-import { useState } from 'react';
+import Link from 'next/link';
+import { useEffect, useState } from 'react';
+import lastestArticles from '../../../stores/lastestArticles';
 import styles from './LastestArticles.module.scss';
 
 export interface ILastestArticles {
-  tag: string;
+  id: number;
   title: string;
-  body: string;
-  author: string;
-  time: string;
+  summary: string;
+  date: string;
 }
 
 const LastestArticles: React.FC = () => {
-  const [articles, setArticles] = useState([
-    { title: '海王星特調Espresso–Maserati Grecale Trofeo義大利羅馬試駕' },
-    {
-      title:
-        '[U-EV]只有純電版、馬力上看760匹，Maserati將在2025年推出下一代Levante',
-    },
-    {
-      title: '全臺限量3輛、售價668萬，Maserati Levante Modena Trofeo Line上市',
-    },
-    {
-      title:
-        '搭載可變色玻璃電動硬頂、2023下半年導入，Maserati正式發表MC20 Cielo',
-    },
-  ]);
+  const [articles, setArticles] = useState<ILastestArticles[]>([]);
+  const [articlesLength] = useState(lastestArticles.length);
+
+  useEffect(() => {
+    if (articlesLength > 5) {
+      let top5 = [];
+      for (let i = 0; i < 5; i++) {
+        top5.push(lastestArticles[i]);
+      }
+      setArticles(top5);
+      return;
+    }
+    if (lastestArticles.length <= 5) {
+      setArticles(lastestArticles);
+      return;
+    }
+  }, []);
 
   const [isLoading, setIsLoading] = useState(false);
 
   const fetchMoreArticles = () => {
     setIsLoading(true);
     setTimeout(() => {
-      setArticles([
-        ...articles,
-        { title: '44444' },
-        { title: '55555' },
-        { title: '66666' },
-        { title: '77777' },
-      ]);
+      let appendArticles = [];
+      for (let i = articles.length; i < articlesLength; i++) {
+        appendArticles.push(lastestArticles[i]);
+      }
+      setArticles([...articles, ...appendArticles]);
       setIsLoading(false);
     }, 2000);
   };
@@ -51,39 +53,44 @@ const LastestArticles: React.FC = () => {
         <div className={styles.firstArticleContainer}>
           <div className={styles.imgBox}>
             <Image
-              src="https://image.u-car.com.tw/cartitleimage_73948.jpg"
+              src={`https://image.u-car.com.tw/cartitleimage_${lastestArticles[0].id}.jpg`}
               width={585}
               height={390}
               alt="cover"
               style={{ objectFit: 'cover' }}
             />
           </div>
-          <div className={styles.desc}>
-            Maserati
-            Ghibli的車系歷史悠久，在每個世代裡都代表著非凡意義，身為第三代的現行車款是在2013年問世，其歷史定位就是成為當代最優美也最狂野的豪華跑房車，而擁有Maserati更是一種時尚潮流的象徵，現在坐擁全新18年式Ghibili
-            GranSport，你就能成為仕紳名流。
-          </div>
+          <div className={styles.desc}>{lastestArticles[0].summary}</div>
         </div>
         <div className={styles.articlesContainer}>
-          {articles.map((article) => {
+          {articles?.map((article) => {
+            if (article.id === articles[0].id) {
+              return;
+            }
             return (
-              <div className={styles.articleBox} key={article.title}>
+              <Link
+                href={`/article/${article.id}`}
+                className={styles.articleBox}
+                key={article.id}
+              >
                 <Image
-                  src="https://image.cache.u-car.com.tw/articleimage_1155148.jpg"
+                  src={`https://image.cache.u-car.com.tw/articlethumb_1_${article.id}.jpg`}
                   width={60}
                   height={40}
                   alt="cover"
                 />
                 <div className={styles.title}>{article.title}</div>
-              </div>
+              </Link>
             );
           })}
         </div>
-        <div className={styles.loadMoreBtn}>
-          <button onClick={fetchMoreArticles}>
-            {isLoading ? '載入中...' : '載入更多'}
-          </button>
-        </div>
+        {articlesLength < 6 ? null : (
+          <div className={styles.loadMoreBtn}>
+            <button onClick={fetchMoreArticles}>
+              {isLoading ? '載入中...' : '載入更多'}
+            </button>
+          </div>
+        )}
       </div>
     </section>
   );

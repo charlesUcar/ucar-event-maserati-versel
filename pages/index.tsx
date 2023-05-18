@@ -7,6 +7,7 @@ import HeroBanner from '../components/banners/hero/HeroBanner';
 import FooterLayout from '../components/layouts/footer/FooterLayout';
 import HeaderLayout from '../components/layouts/header/HeaderLayout';
 import PrimaryLayout from '../components/layouts/primary/PrimaryLayout';
+import roadTestArticles from '../stores/roadTestArticles';
 // import styles from '../styles/Home.module.css';
 import { NextPageWithLayout } from './page';
 
@@ -16,7 +17,10 @@ const Home: NextPageWithLayout = () => {
       <main className="home">
         <HeroBanner />
         <LastestArticles />
-        <SlideArticles mainTitle="Maserati 國內/外試車" />
+        <SlideArticles
+          mainTitle="Maserati 國內/外試車"
+          articles={roadTestArticles}
+        />
         <StoryArticles />
         <VideoArticles />
         <SlideArticles mainTitle="Maserati 原廠認證中古車" />

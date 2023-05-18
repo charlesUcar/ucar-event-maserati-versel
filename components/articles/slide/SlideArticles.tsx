@@ -1,9 +1,14 @@
 import Image from 'next/image';
-import { useState } from 'react';
 import styles from './SlideArticles.module.scss';
 
 export interface ISlideArticles {
   mainTitle: string;
+  articles: {
+    id: number;
+    title: string;
+    summary: string;
+    date: string;
+  }[];
 }
 
 // Import Swiper React components
@@ -17,29 +22,7 @@ import 'swiper/css/scrollbar';
 // import required modules
 import { FreeMode, Keyboard, Mousewheel, Scrollbar } from 'swiper';
 
-const SlideArticles: React.FC<ISlideArticles> = ({ mainTitle }) => {
-  const [articles, setArticles] = useState([
-    { title: '海王星特調Espresso–Maserati Grecale Trofeo義大利羅馬試駕' },
-    {
-      title:
-        '[U-EV]只有純電版、馬力上看760匹，Maserati將在2025年推出下一代Levante',
-    },
-    {
-      title: '全臺限量3輛、售價668萬，Maserati Levante Modena Trofeo Line上市',
-    },
-    {
-      title:
-        '搭載可變色玻璃電動硬頂、2023下半年導入，Maserati正式發表MC20 Cielo',
-    },
-    {
-      title: '全臺限量3輛、售價668萬，Maserati Levante Modena Trofeo Line上市',
-    },
-    {
-      title:
-        '搭載可變色玻璃電動硬頂、2023下半年導入，Maserati正式發表MC20 Cielo',
-    },
-  ]);
-
+const SlideArticles: React.FC<ISlideArticles> = ({ mainTitle, articles }) => {
   const breakpoints = {
     // when window width is >= 480px
     480: {
@@ -73,12 +56,12 @@ const SlideArticles: React.FC<ISlideArticles> = ({ mainTitle }) => {
             modules={[Scrollbar, FreeMode, Mousewheel, Keyboard]}
             className="mySwiper"
           >
-            {articles.map((article) => {
+            {articles?.map((article) => {
               return (
-                <SwiperSlide key={article.title}>
+                <SwiperSlide key={article.id}>
                   <div className={styles.articleBox}>
                     <Image
-                      src="https://image.cache.u-car.com.tw/articleimage_1155148.jpg"
+                      src={`https://image.cache.u-car.com.tw/articlethumb_1_${article.id}.jpg`}
                       width={300}
                       height={200}
                       alt="cover"
