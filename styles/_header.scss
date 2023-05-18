@@ -1,4 +1,5 @@
 .head {
+  position: relative;
   height: 60px;
   background: rgb(0, 28, 104);
   background: linear-gradient(
@@ -14,6 +15,37 @@
   .shopping,
   .desktop {
     display: none;
+  }
+
+  .stickyBar {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    background: hsla(42, 100%, 64%, 1);
+    opacity: 0;
+    transition: 0.2s all linear;
+    &.list-stickyBar {
+      padding: 4px 0;
+      height: 29px;
+      font-size: 15px;
+      font-weight: 700;
+      bottom: -33px;
+    }
+    img {
+      height: 100%;
+      width: auto;
+    }
+    @media screen and (max-width: 980px) {
+      &.list-stickyBar {
+        bottom: -29px;
+      }
+    }
+    &.show {
+      opacity: 1;
+    }
   }
 
   .logo {

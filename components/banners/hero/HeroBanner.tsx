@@ -22,7 +22,6 @@ const HeroBanner: React.FC<IHeroBanner> = () => {
             height={56}
             width={135}
           />
-
           <span>義式百年傳奇 Maserati</span>
         </div>
       </div>

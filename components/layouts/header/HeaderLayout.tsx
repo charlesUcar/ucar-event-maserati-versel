@@ -1,3 +1,6 @@
+import Image from 'next/image';
+import { useEffect } from 'react';
+
 export interface IHeaderLayout {}
 
 const HeaderLayout: React.FC<IHeaderLayout> = () => {
@@ -13,6 +16,20 @@ const HeaderLayout: React.FC<IHeaderLayout> = () => {
     modalEl!.style.display = 'block';
   };
 
+  useEffect(() => {
+    const firstMainTitle = document.getElementById('firstMainTitle');
+    const firstMainTitleOffsetTop = firstMainTitle!.offsetTop;
+    const stickyBarEl = document.getElementById('header-stickyBar');
+    // console.log(firstMainTitleOffsetTop);
+    addEventListener('scroll', () => {
+      if (firstMainTitleOffsetTop - 160 < window.scrollY) {
+        stickyBarEl?.classList.add('show');
+      } else {
+        stickyBarEl?.classList.remove('show');
+      }
+    });
+  }, []);
+
   return (
     <div
       className="head scroll-to-fixed-fixed"
@@ -25,6 +42,15 @@ const HeaderLayout: React.FC<IHeaderLayout> = () => {
         left: 0 + 'px',
       }}
     >
+      <div id="header-stickyBar" className="stickyBar list-stickyBar">
+        <Image
+          src="/asset/svg/maserati-logo-black.svg"
+          alt="Picture of the author"
+          height={56}
+          width={135}
+        />
+        <span>義式百年傳奇 Maserati</span>
+      </div>
       <div className="wrap">
         <div className="span2">
           <div className="nav_switch">

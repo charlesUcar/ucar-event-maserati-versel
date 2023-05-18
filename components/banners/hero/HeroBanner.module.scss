@@ -32,7 +32,7 @@
       height: 100%;
       color: #fff;
       opacity: 0;
-      animation: heroFadeIn 1.5s ease-in-out;
+      animation: heroFadeIn 2s ease-in-out;
       animation-fill-mode: forwards;
       //   animation-delay: 1s;
       img {
@@ -72,7 +72,7 @@
   .heroImg {
     opacity: 0;
     transform: translateY(100%);
-    animation: heroImgFadeIn 1.5s ease-in-out;
+    animation: heroImgFadeIn 2s ease-in-out;
     animation-fill-mode: forwards;
   }
   .fromMask {
@@ -92,9 +92,14 @@
   }
   25% {
     height: 100%;
+    opacity: 0;
+  }
+
+  50% {
+    height: 100%;
     opacity: 1;
   }
-  50% {
+  75% {
     height: 100%;
     opacity: 1;
   }
@@ -118,6 +123,10 @@
     transform: translateY(100%);
   }
   50% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  75% {
     opacity: 0;
     transform: translateY(100%);
   }

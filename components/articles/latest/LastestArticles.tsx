@@ -45,7 +45,9 @@ const LastestArticles: React.FC = () => {
   return (
     <section id={styles.lastestArticles}>
       <div className={styles.container}>
-        <div className={styles.mainTitle}>最新內容</div>
+        <div id="firstMainTitle" className={styles.mainTitle}>
+          最新內容
+        </div>
         <div className={styles.firstArticleContainer}>
           <div className={styles.imgBox}>
             <Image
