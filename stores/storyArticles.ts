@@ -1,11 +1,12 @@
-const roadTestArticles = [
+const storyArticles = [
   {
-    id: 74325,
-    title: '[捉對]豪華中型SUV巔峰之戰—Maserati Grecale GT vs. Porsche Macan',
+    id: 69750,
+    title:
+      '[U-EV]2025全車系皆有純電、純電GranTurismo馬力超過1,200匹，Maserati Folgore純電計畫訪談',
     summary:
-      'Macan不但是國內許多豪華品牌車主換購中型SUV時、腦海中第一個浮出來的選項，也實現了不少車迷想入主跑車品牌的夢想；不過，當已經成功進軍SUV戰場的Maserati，也在2022年3月挾著超強的競爭力、帶來品牌第二款SUV：Grecale後，Macan還能獨享這樣的光環嗎？',
-    category: 3,
-    date: '2023/03/24',
+      'U-CAR等全球媒體進行「Maserati Folgore」純電計畫訪談，將在2025年替全車系推出純電選擇，目標在2030年轉型純電品牌。並揭示GranTurismo、Grecale會在2023年推出純電版，2025年前也推出MC20、大改款Quattroporte與Levante的純電版。GranTurismo Folgore更採3馬達最大馬力超過1,200匹！',
+    category: 1,
+    date: '2022/03/17',
   },
   {
     id: 74118,
@@ -37,9 +38,8 @@ const roadTestArticles = [
       '這·就是我要的義式浪漫—2022 Maserati Trident Glamping與Levante GT/Modena試駕',
     summary:
       '不但已將原廠「Gran Tour」活動移師到臺灣進行，且每兩年就會舉辦令人血脈賁張的賽道日，為了讓國內Maserati車主與媒體能夠在山林裡、享受義大利獨有生活美學，總代理臺灣蒙地拿特別替我們規劃了這趟既有美食佳餚，又能充分體驗車輛出色性能的「2022 Trident Glamping」義式奢華露營行程……',
-    category: 3,
     date: '2022/04/18',
   },
 ];
 
-export default roadTestArticles;
+export default storyArticles;

@@ -1,5 +1,4 @@
-import Image from 'next/image';
-import { useState } from 'react';
+import videoArticles from '../../../stores/videoArticles';
 import styles from './VideoArticles.module.scss';
 
 export interface IVideoArticles {
@@ -19,31 +18,6 @@ import 'swiper/css/pagination';
 import { EffectCards, Navigation, Pagination } from 'swiper';
 
 const VideoArticles: React.FC<IVideoArticles> = () => {
-  const [articles, setArticles] = useState([
-    {
-      title:
-        '【試駕】Maserati Levante Modena試駕：原來Trofeo Line才是為揚心目中的完美型態｜新車試駕',
-    },
-    {
-      title:
-        '[U-EV]只有純電版、馬力上看760匹，Maserati將在2025年推出下一代Levante',
-    },
-    {
-      title: '全臺限量3輛、售價668萬，Maserati Levante Modena Trofeo Line上市',
-    },
-    {
-      title:
-        '搭載可變色玻璃電動硬頂、2023下半年導入，Maserati正式發表MC20 Cielo',
-    },
-    {
-      title: '全臺限量3輛、售價668萬，Maserati Levante Modena Trofeo Line上市',
-    },
-    {
-      title:
-        '搭載可變色玻璃電動硬頂、2023下半年導入，Maserati正式發表MC20 Cielo',
-    },
-  ]);
-
   return (
     <section id={styles.videoArticles} className="videoArticles">
       <div className={styles.container}>
@@ -53,22 +27,25 @@ const VideoArticles: React.FC<IVideoArticles> = () => {
             slidesPerView={1}
             spaceBetween={0}
             effect={'cards'}
-            grabCursor={true}
+            grabCursor={false}
             modules={[EffectCards, Pagination, Navigation]}
-            pagination={true}
+            pagination={{ clickable: true }}
             navigation={true}
             className="mySwiper"
           >
-            {articles.map((article) => {
+            {videoArticles.map((article) => {
               return (
                 <SwiperSlide key={article.title}>
                   <div className={styles.articleBox}>
-                    <Image
-                      src="https://i3.ytimg.com/vi/pX-z8GgDWM8/maxresdefault.jpg"
-                      width={300}
-                      height={200}
-                      alt="cover"
-                    />
+                    <iframe
+                      width="700"
+                      height="450"
+                      src={`https://www.youtube.com/embed/${article.ytId}?rel=0&modestbranding=1&showinfo=0`}
+                      title="YouTube video player"
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowFullScreen
+                    ></iframe>
                     <div className={`${styles.title} videoArticles-title`}>
                       {article.title}
                     </div>

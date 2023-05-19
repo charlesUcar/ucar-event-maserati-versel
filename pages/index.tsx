@@ -27,7 +27,7 @@ const Home: NextPageWithLayout = () => {
           mainTitle="Maserati 原廠認證中古車"
           articles={roadTestArticles}
         />
-        <TypicleArticles />
+        <TypicleArticles mainTitle={'延伸閱讀'} />
       </main>
     </div>
   );

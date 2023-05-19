@@ -104,17 +104,6 @@ button {
   background-color: rgba(0, 0, 0, 0.8);
 }
 
-.videoArticles .swiper-slide:after {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0);
-  transition: 0.2s all linear;
-}
-
 .videoArticles .swiper-slide:not(.swiper-slide-active):after {
   content: '';
   position: absolute;
@@ -124,6 +113,10 @@ button {
   height: 100%;
   background: rgba(0, 0, 0, 0.7);
   transition: 0.2s all linear;
+}
+
+.videoArticles .swiper .swiper-slide .swiper-slide-shadow {
+  background: none;
 }
 
 .videoArticles .swiper-slide:not(.swiper-slide-active) .videoArticles-title {

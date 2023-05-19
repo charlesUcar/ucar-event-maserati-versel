@@ -32,15 +32,21 @@
       height: 29px;
       font-size: 15px;
       font-weight: 700;
-      bottom: -33px;
+      bottom: -32px;
     }
     &.article-stickyBar {
       padding: 18.5px 0;
       height: 72px;
       font-size: 28px;
       font-weight: 500;
-      bottom: -76px;
+      bottom: -75px;
       opacity: 1;
+      &.thin {
+        padding: 8px 0;
+        height: 36px;
+        font-size: 18px;
+        bottom: -40px;
+      }
     }
     img {
       height: 100%;
@@ -48,13 +54,16 @@
     }
     @media screen and (max-width: 980px) {
       &.lists-stickyBar {
-        bottom: -29px;
+        bottom: -28px;
       }
       &.article-stickyBar {
         padding: 12px 0;
         height: 49px;
         font-size: 18px;
         bottom: -49px;
+        &.thin {
+          bottom: -36px;
+        }
       }
     }
     &.show {

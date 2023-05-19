@@ -3,14 +3,10 @@ import { useState } from 'react';
 import styles from './TypicalArticles.module.scss';
 
 export interface ITypicalArticles {
-  tag: string;
-  title: string;
-  body: string;
-  author: string;
-  time: string;
+  mainTitle?: string;
 }
 
-const TypicalArticles: React.FC = () => {
+const TypicalArticles: React.FC<ITypicalArticles> = ({ mainTitle }) => {
   const [articles, setArticles] = useState([
     { title: '海王星特調Espresso–Maserati Grecale Trofeo義大利羅馬試駕' },
     {
@@ -69,7 +65,7 @@ const TypicalArticles: React.FC = () => {
   return (
     <section id={styles.typicalArticles}>
       <div className={styles.container}>
-        <div className={styles.mainTitle}>延伸閱讀</div>
+        <div className={styles.mainTitle}>{mainTitle}</div>
         <div className={styles.articlesContainer}>
           {articles.map((article) => {
             return (

@@ -79,8 +79,8 @@ const LastestArticles: React.FC = () => {
               >
                 <Image
                   src={`https://image.cache.u-car.com.tw/articlethumb_1_${article.id}.jpg`}
-                  width={60}
-                  height={40}
+                  width={300}
+                  height={200}
                   alt="cover"
                 />
                 <div className={styles.title}>{article.title}</div>

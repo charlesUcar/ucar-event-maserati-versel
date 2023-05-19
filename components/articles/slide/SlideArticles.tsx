@@ -67,8 +67,8 @@ const SlideArticles: React.FC<ISlideArticles> = ({ mainTitle, articles }) => {
                   >
                     <Image
                       src={`https://image.cache.u-car.com.tw/articlethumb_1_${article.id}.jpg`}
-                      width={300}
-                      height={200}
+                      width={600}
+                      height={400}
                       alt="cover"
                     />
                     <div className={styles.title}>{article.title}</div>

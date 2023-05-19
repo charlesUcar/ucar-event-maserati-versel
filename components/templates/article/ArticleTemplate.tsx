@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
+import TypicalArticles from '../../articles/typical/TypicalArticles';
 import styles from './ArticleTemplate.module.scss';
 
 export interface IArticleTemplate {
@@ -153,6 +154,7 @@ const ArticleTemplate: React.FC<IArticleTemplate> = ({ articleData }) => {
           }}
         ></div>
       </div>
+      <TypicalArticles mainTitle="相關文章" />
     </>
   );
 };

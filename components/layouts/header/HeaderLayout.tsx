@@ -36,11 +36,27 @@ const HeaderLayout: React.FC<IHeaderLayout> = ({ position }) => {
 
       addEventListener('scroll', eventListener);
       listenerRef.current = eventListener;
+      return () => {
+        window.removeEventListener('scroll', listenerRef.current);
+      };
     }
-    return () => {
-      window.removeEventListener('scroll', listenerRef.current);
-    };
-  }, []);
+    if (position === 'article') {
+      const stickyBarEl = document.getElementById('header-stickyBar');
+      const eventListener = () => {
+        if (window.scrollY > 50) {
+          stickyBarEl?.classList.add('thin');
+        } else {
+          stickyBarEl?.classList.remove('thin');
+        }
+      };
+
+      addEventListener('scroll', eventListener);
+      listenerRef.current = eventListener;
+      return () => {
+        window.removeEventListener('scroll', listenerRef.current);
+      };
+    }
+  }, [position]);
 
   return (
     <div
