@@ -7,6 +7,7 @@ export interface ISlideArticles {
     id: number;
     title: string;
     summary: string;
+    category: number;
     date: string;
   }[];
 }
@@ -20,6 +21,7 @@ import 'swiper/css/free-mode';
 import 'swiper/css/scrollbar';
 
 // import required modules
+import Link from 'next/link';
 import { FreeMode, Keyboard, Mousewheel, Scrollbar } from 'swiper';
 
 const SlideArticles: React.FC<ISlideArticles> = ({ mainTitle, articles }) => {
@@ -54,12 +56,15 @@ const SlideArticles: React.FC<ISlideArticles> = ({ mainTitle, articles }) => {
               enabled: true,
             }}
             modules={[Scrollbar, FreeMode, Mousewheel, Keyboard]}
-            className="mySwiper"
+            className="slideArticle-swiper"
           >
             {articles?.map((article) => {
               return (
                 <SwiperSlide key={article.id}>
-                  <div className={styles.articleBox}>
+                  <Link
+                    href={`/article/${article.category}/${article.id}`}
+                    className={styles.articleBox}
+                  >
                     <Image
                       src={`https://image.cache.u-car.com.tw/articlethumb_1_${article.id}.jpg`}
                       width={300}
@@ -67,7 +72,7 @@ const SlideArticles: React.FC<ISlideArticles> = ({ mainTitle, articles }) => {
                       alt="cover"
                     />
                     <div className={styles.title}>{article.title}</div>
-                  </div>
+                  </Link>
                 </SwiperSlide>
               );
             })}

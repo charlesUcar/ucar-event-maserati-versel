@@ -1,9 +1,12 @@
 import Image from 'next/image';
-import { useEffect } from 'react';
+import Link from 'next/link';
+import { useEffect, useRef } from 'react';
 
-export interface IHeaderLayout {}
+export interface IHeaderLayout {
+  position: string;
+}
 
-const HeaderLayout: React.FC<IHeaderLayout> = () => {
+const HeaderLayout: React.FC<IHeaderLayout> = ({ position }) => {
   const openSidebar = () => {
     const sidebarEl = document.getElementById('mySidenav');
     const mainEl = document.getElementById('myMain');
@@ -16,18 +19,27 @@ const HeaderLayout: React.FC<IHeaderLayout> = () => {
     modalEl!.style.display = 'block';
   };
 
+  const listenerRef = useRef();
+
   useEffect(() => {
-    const firstMainTitle = document.getElementById('firstMainTitle');
-    const firstMainTitleOffsetTop = firstMainTitle!.offsetTop;
-    const stickyBarEl = document.getElementById('header-stickyBar');
-    // console.log(firstMainTitleOffsetTop);
-    addEventListener('scroll', () => {
-      if (firstMainTitleOffsetTop - 160 < window.scrollY) {
-        stickyBarEl?.classList.add('show');
-      } else {
-        stickyBarEl?.classList.remove('show');
-      }
-    });
+    if (position === 'lists') {
+      const firstMainTitle = document.getElementById('firstMainTitle');
+      const firstMainTitleOffsetTop = firstMainTitle!.offsetTop;
+      const stickyBarEl = document.getElementById('header-stickyBar');
+      const eventListener = () => {
+        if (firstMainTitleOffsetTop - 160 < window.scrollY) {
+          stickyBarEl?.classList.add('show');
+        } else {
+          stickyBarEl?.classList.remove('show');
+        }
+      };
+
+      addEventListener('scroll', eventListener);
+      listenerRef.current = eventListener;
+    }
+    return () => {
+      window.removeEventListener('scroll', listenerRef.current);
+    };
   }, []);
 
   return (
@@ -42,7 +54,11 @@ const HeaderLayout: React.FC<IHeaderLayout> = () => {
         left: 0 + 'px',
       }}
     >
-      <div id="header-stickyBar" className="stickyBar list-stickyBar">
+      <Link
+        href="/"
+        id="header-stickyBar"
+        className={`stickyBar ${position}-stickyBar`}
+      >
         <Image
           src="/asset/svg/maserati-logo-black.svg"
           alt="Picture of the author"
@@ -50,7 +66,7 @@ const HeaderLayout: React.FC<IHeaderLayout> = () => {
           width={135}
         />
         <span>義式百年傳奇 Maserati</span>
-      </div>
+      </Link>
       <div className="wrap">
         <div className="span2">
           <div className="nav_switch">

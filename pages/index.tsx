@@ -23,7 +23,10 @@ const Home: NextPageWithLayout = () => {
         />
         <StoryArticles />
         <VideoArticles />
-        <SlideArticles mainTitle="Maserati 原廠認證中古車" />
+        <SlideArticles
+          mainTitle="Maserati 原廠認證中古車"
+          articles={roadTestArticles}
+        />
         <TypicleArticles />
       </main>
     </div>
@@ -35,7 +38,7 @@ export default Home;
 Home.getLayout = (page) => {
   return (
     <PrimaryLayout>
-      <HeaderLayout />
+      <HeaderLayout position="lists" />
       {page}
       <FooterLayout />
     </PrimaryLayout>

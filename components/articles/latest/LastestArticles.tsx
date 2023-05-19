@@ -8,6 +8,7 @@ export interface ILastestArticles {
   id: number;
   title: string;
   summary: string;
+  category: number;
   date: string;
 }
 
@@ -50,7 +51,10 @@ const LastestArticles: React.FC = () => {
         <div id="firstMainTitle" className={styles.mainTitle}>
           最新內容
         </div>
-        <div className={styles.firstArticleContainer}>
+        <Link
+          href={`/article/${lastestArticles[0].category}/${lastestArticles[0].id}`}
+          className={styles.firstArticleContainer}
+        >
           <div className={styles.imgBox}>
             <Image
               src={`https://image.u-car.com.tw/cartitleimage_${lastestArticles[0].id}.jpg`}
@@ -61,7 +65,7 @@ const LastestArticles: React.FC = () => {
             />
           </div>
           <div className={styles.desc}>{lastestArticles[0].summary}</div>
-        </div>
+        </Link>
         <div className={styles.articlesContainer}>
           {articles?.map((article) => {
             if (article.id === articles[0].id) {
@@ -69,7 +73,7 @@ const LastestArticles: React.FC = () => {
             }
             return (
               <Link
-                href={`/article/${article.id}`}
+                href={`/article/${article.category}/${article.id}`}
                 className={styles.articleBox}
                 key={article.id}
               >

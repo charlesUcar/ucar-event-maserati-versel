@@ -27,20 +27,34 @@
     background: hsla(42, 100%, 64%, 1);
     opacity: 0;
     transition: 0.2s all linear;
-    &.list-stickyBar {
+    &.lists-stickyBar {
       padding: 4px 0;
       height: 29px;
       font-size: 15px;
       font-weight: 700;
       bottom: -33px;
     }
+    &.article-stickyBar {
+      padding: 18.5px 0;
+      height: 72px;
+      font-size: 28px;
+      font-weight: 500;
+      bottom: -76px;
+      opacity: 1;
+    }
     img {
       height: 100%;
       width: auto;
     }
     @media screen and (max-width: 980px) {
-      &.list-stickyBar {
+      &.lists-stickyBar {
         bottom: -29px;
+      }
+      &.article-stickyBar {
+        padding: 12px 0;
+        height: 49px;
+        font-size: 18px;
+        bottom: -49px;
       }
     }
     &.show {

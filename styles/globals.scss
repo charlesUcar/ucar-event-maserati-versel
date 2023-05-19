@@ -183,8 +183,15 @@ button {
   }
 }
 
+.slideArticle-swiper {
+  .swiper-slide {
+    padding-bottom: 1rem;
+  }
+}
+
 @import './initial.scss';
 @import './header';
+@import './article';
 @import './footer';
 @import './sidemenu';
 @import './grid-rwd';
