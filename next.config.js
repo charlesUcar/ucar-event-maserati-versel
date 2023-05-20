@@ -4,8 +4,8 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   images: {
-    loader: 'akamai',
-    path: '',
+    // loader: 'akamai',
+    // path: '',
     domains: [
       'i.pravatar.cc',
       'hips.hearstapps.com',

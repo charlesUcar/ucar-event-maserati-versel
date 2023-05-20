@@ -79,8 +79,8 @@ const TypicalArticles: React.FC<ITypicalArticles> = ({ mainTitle }) => {
               <div className={styles.articleBox} key={article.title}>
                 <Image
                   src="https://image.cache.u-car.com.tw/articleimage_1155148.jpg"
-                  width={60}
-                  height={40}
+                  width={300}
+                  height={200}
                   alt="cover"
                 />
                 <div className={styles.title}>{article.title}</div>
