@@ -34,10 +34,24 @@ export async function getStaticProps({ params }: any) {
 
 export const getStaticPaths = async () => {
   return {
-    paths: [], //indicates that no page needs be created at build time
-    fallback: 'blocking', //indicates the type of fallback
+    paths: [
+      {
+        params: { category: '4', articleId: '73948' },
+      },
+      {
+        params: { category: '4', articleId: '68523' },
+      },
+    ], //indicates that no page needs be created at build time
+    fallback: false, //indicates the type of fallback
   };
 };
+
+// export const getStaticPaths = async () => {
+//   return {
+//     paths: [], //indicates that no page needs be created at build time
+//     fallback: 'blocking', //indicates the type of fallback
+//   };
+// };
 
 export interface IArticle {
   articleData?: any;
