@@ -20,6 +20,13 @@ const ArticleTemplate: React.FC<IArticleTemplate> = ({ articleData }) => {
     setCurrentUrl(window.location.href);
   }, []);
 
+  const handleOpenWindow = () => {
+    const url = 'https://lineit.line.me/share/ui?url='.concat(
+      encodeURIComponent(location.href)
+    );
+    window.open(url);
+  };
+
   const dateFormatter = (articleDate: string) => {
     // 建立Date物件
     const date = new Date(articleDate);
@@ -70,8 +77,9 @@ const ArticleTemplate: React.FC<IArticleTemplate> = ({ articleData }) => {
           </Link>
           <Link
             className="line"
-            href={`javascript: void(window.open('https://lineit.line.me/share/ui?url=%27%20.concat(encodeURIComponent(location.href))%20));`}
+            href="#"
             target="_blank"
+            onClick={handleOpenWindow}
           >
             <svg
               width="24"
@@ -129,7 +137,9 @@ const ArticleTemplate: React.FC<IArticleTemplate> = ({ articleData }) => {
               </Link>
               <Link
                 className="line"
-                href={`javascript: void(window.open('https://lineit.line.me/share/ui?url=%27%20.concat(encodeURIComponent(location.href))%20));`}
+                href="#"
+                target="_blank"
+                onClick={handleOpenWindow}
               >
                 <svg
                   width="24"

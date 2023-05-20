@@ -4,6 +4,13 @@ import styles from './TypicalArticles.module.scss';
 
 export interface ITypicalArticles {
   mainTitle?: string;
+  articles?: {
+    id: number;
+    title: string;
+    summary: string;
+    category: number;
+    date: string;
+  }[];
 }
 
 const TypicalArticles: React.FC<ITypicalArticles> = ({ mainTitle }) => {

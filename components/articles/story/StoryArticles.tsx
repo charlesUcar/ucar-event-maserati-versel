@@ -5,13 +5,13 @@ import styles from './StoryArticles.module.scss';
 
 export interface IStoryArticles {
   mainTitle?: string;
-  articles: {
+  articles?: {
     id: number;
     title: string;
     summary: string;
     category: number;
     date: string;
-  };
+  }[];
 }
 
 const StoryArticles: React.FC<IStoryArticles> = () => {

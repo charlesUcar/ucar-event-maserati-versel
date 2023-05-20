@@ -1,7 +1,7 @@
 import { IArticleTemplate } from './ArticleTemplate';
 
 const base: IArticleTemplate = {
-  sampleTextProp: 'Hello world!',
+  articleData: null,
 };
 
 export const mockArticleTemplateProps = {

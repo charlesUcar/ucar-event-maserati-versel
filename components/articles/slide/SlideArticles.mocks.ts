@@ -1,11 +1,16 @@
 import { ISlideArticles } from './SlideArticles';
 
 const base: ISlideArticles = {
-  tag: 'Felines',
-  title: `What's new in Cats`,
-  body: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi perferendis molestiae non nemo doloribus. Doloremque, nihil! At ea atque quidem!',
-  author: 'Alex',
-  time: '2h ago',
+  mainTitle: 'SlideArticlesMainTitle',
+  articles: [
+    {
+      id: 123,
+      title: 'title',
+      summary: 'summary',
+      category: 123,
+      date: 'date',
+    },
+  ],
 };
 
 export const mockSlideArticlesProps = {

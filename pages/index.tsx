@@ -8,6 +8,7 @@ import FooterLayout from '../components/layouts/footer/FooterLayout';
 import HeaderLayout from '../components/layouts/header/HeaderLayout';
 import PrimaryLayout from '../components/layouts/primary/PrimaryLayout';
 import roadTestArticles from '../stores/roadTestArticles';
+import usedCarArticles from '../stores/usedCarArticles';
 // import styles from '../styles/Home.module.css';
 import { NextPageWithLayout } from './page';
 
@@ -25,7 +26,7 @@ const Home: NextPageWithLayout = () => {
         <VideoArticles />
         <SlideArticles
           mainTitle="Maserati 原廠認證中古車"
-          articles={roadTestArticles}
+          articles={usedCarArticles}
         />
         <TypicleArticles mainTitle={'延伸閱讀'} />
       </main>

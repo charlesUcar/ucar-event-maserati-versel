@@ -3,6 +3,13 @@ import styles from './VideoArticles.module.scss';
 
 export interface IVideoArticles {
   mainTitle?: string;
+  articles?: {
+    id: number;
+    title: string;
+    summary: string;
+    ytId: string;
+    date: string;
+  }[];
 }
 
 // Import Swiper React components

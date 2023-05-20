@@ -35,9 +35,9 @@ const HeaderLayout: React.FC<IHeaderLayout> = ({ position }) => {
       };
 
       addEventListener('scroll', eventListener);
-      listenerRef.current = eventListener;
+      listenerRef.current = eventListener as any;
       return () => {
-        window.removeEventListener('scroll', listenerRef.current);
+        window.removeEventListener('scroll', listenerRef.current as any);
       };
     }
     if (position === 'article') {
@@ -51,9 +51,9 @@ const HeaderLayout: React.FC<IHeaderLayout> = ({ position }) => {
       };
 
       addEventListener('scroll', eventListener);
-      listenerRef.current = eventListener;
+      listenerRef.current = eventListener as any;
       return () => {
-        window.removeEventListener('scroll', listenerRef.current);
+        window.removeEventListener('scroll', listenerRef.current as any);
       };
     }
   }, [position]);
