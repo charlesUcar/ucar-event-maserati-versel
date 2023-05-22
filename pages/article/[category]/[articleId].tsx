@@ -41,6 +41,27 @@ export const getStaticPaths = async () => {
       {
         params: { category: '4', articleId: '68523' },
       },
+      {
+        params: { category: '3', articleId: '74325' },
+      },
+      {
+        params: { category: '3', articleId: '74118' },
+      },
+      {
+        params: { category: '3', articleId: '74023' },
+      },
+      {
+        params: { category: '3', articleId: '70198' },
+      },
+      {
+        params: { category: '3', articleId: '70129' },
+      },
+      {
+        params: { category: '1', articleId: '69750' },
+      },
+      {
+        params: { category: '4', articleId: '74841' },
+      },
     ], //indicates that no page needs be created at build time
     fallback: false, //indicates the type of fallback
   };
