@@ -13,6 +13,7 @@ const HeroBanner: React.FC<IHeroBanner> = () => {
           className={styles.heroImg}
           fill={true}
           style={{ objectFit: 'cover' }}
+          loading="eager"
         />
         <div className={styles.fromMask}></div>
         <div className={styles.slogan}>
@@ -21,6 +22,7 @@ const HeroBanner: React.FC<IHeroBanner> = () => {
             alt="Picture of the author"
             height={56}
             width={135}
+            loading="eager"
           />
           <span>義式百年傳奇 Maserati</span>
         </div>
