@@ -149,8 +149,8 @@ button {
   font-weight: 800;
 }
 
-.videoArticles .swiper-pagination {
-  transform: translateY(250%);
+.videoArticles .swiper-cards {
+  padding-bottom: 2.5rem;
 }
 
 .videoArticles .swiper-pagination-bullet {
@@ -182,6 +182,25 @@ button {
   }
 }
 
+.out_wrap {
+  width: 100%;
+}
+
+.out_wrap table {
+  margin: auto;
+  text-align: center;
+  min-width: 100%;
+  max-width: 100%;
+  width: 100%;
+}
+
+.out_wrap table td,
+.out_wrap table th {
+  padding: 8px;
+  vertical-align: middle !important;
+}
+
+@import './reset.scss';
 @import './initial.scss';
 @import './header';
 @import './article';
