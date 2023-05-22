@@ -109,10 +109,13 @@ const ArticleTemplate: React.FC<IArticleTemplate> = ({ articleData }) => {
           <h1 className="body-title">{articleData.title}</h1>
           <div className="body-articleInfo">
             <div className="author">
-              {'文 • ' +
-                articleData.reporter +
-                ' | 圖 • ' +
-                articleData.photographer}
+              <span className="reporter">
+                文&nbsp;&nbsp;•&nbsp;&nbsp;{articleData.reporter}
+              </span>
+              &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+              <span className="photographer">
+                圖&nbsp;&nbsp;•&nbsp;&nbsp;{articleData.photographer}
+              </span>
             </div>
             <div className="postDate">{dateFormatter(articleData.date)}</div>
           </div>
