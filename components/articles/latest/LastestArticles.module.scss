@@ -85,8 +85,10 @@
         }
       }
       @media (max-width: 768px) {
+        margin: 24px 0 0 0;
+        gap: 24px;
         .articleBox {
-          width: calc(50% - 16px);
+          width: calc(50% - 12px);
         }
       }
       // @media (max-width: 414px) {
@@ -100,6 +102,7 @@
       justify-content: center;
       align-items: center;
       width: 100%;
+      padding-top: 2rem;
       button {
         width: 300px;
         height: 56px;

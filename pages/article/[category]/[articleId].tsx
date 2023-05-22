@@ -90,6 +90,9 @@ export const getStaticPaths = async () => {
         params: { category: '1', articleId: '69562' },
       },
       {
+        params: { category: '1', articleId: '69514' },
+      },
+      {
         params: { category: '1', articleId: '69477' },
       },
       {
