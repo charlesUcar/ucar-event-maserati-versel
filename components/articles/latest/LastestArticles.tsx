@@ -15,6 +15,8 @@ export interface ILastestArticles {
 const LastestArticles: React.FC = () => {
   const [articles, setArticles] = useState<ILastestArticles[]>([]);
   const [articlesLength] = useState(lastestArticles.length);
+  const [isFetchMoreBtnShow, setIsFetchMoreBtnShow] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     if (articlesLength > 5) {
@@ -31,7 +33,11 @@ const LastestArticles: React.FC = () => {
     }
   }, []);
 
-  const [isLoading, setIsLoading] = useState(false);
+  useEffect(() => {
+    if (articles.length === articlesLength) {
+      setIsFetchMoreBtnShow(false);
+    }
+  }, [articles, articlesLength]);
 
   const fetchMoreArticles = () => {
     setIsLoading(true);
@@ -42,7 +48,7 @@ const LastestArticles: React.FC = () => {
       }
       setArticles([...articles, ...appendArticles]);
       setIsLoading(false);
-    }, 2000);
+    }, 1000);
   };
 
   return (
@@ -88,7 +94,7 @@ const LastestArticles: React.FC = () => {
             );
           })}
         </div>
-        {articlesLength < 6 ? null : (
+        {!isFetchMoreBtnShow ? null : (
           <div className={styles.loadMoreBtn}>
             <button onClick={fetchMoreArticles}>
               {isLoading ? '載入中...' : '載入更多'}

@@ -7,6 +7,14 @@ const usedCarArticles = [
     category: 4,
     date: '2023/05/17',
   },
+  {
+    id: 70832,
+    title: '價格透明、擁抱海神更安心，Maserati總代理在臺推出原廠認證中古車App',
+    summary:
+      '已經在臺深耕豪華市場超過10年的Maserati總代理臺灣蒙地拿，不僅一直投入資源與心力在原廠認證中古車部門、致力鞏固Maserati中古車的市場價格和品質，因應數位時代來臨，更自即日推出原廠認證中古車App，透過操作容易、價格透明且便利即時的服務，滿足車主與潛在買家的需求。',
+    category: 1,
+    date: '2022/06/09',
+  },
 ];
 
 export default usedCarArticles;

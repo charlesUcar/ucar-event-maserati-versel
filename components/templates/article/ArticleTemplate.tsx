@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
+import lastestArticles from '../../../stores/lastestArticles';
 import TypicalArticles from '../../articles/typical/TypicalArticles';
 import styles from './ArticleTemplate.module.scss';
 
@@ -19,7 +20,7 @@ const ArticleTemplate: React.FC<IArticleTemplate> = ({ articleData }) => {
         'https://' + (imgEl[i] as HTMLImageElement).dataset.original;
     }
     setCurrentUrl(window.location.href);
-  }, []);
+  }, [articleData]);
 
   const handleOpenWindow = () => {
     const url = 'https://lineit.line.me/share/ui?url='.concat(
@@ -177,7 +178,10 @@ const ArticleTemplate: React.FC<IArticleTemplate> = ({ articleData }) => {
           }}
         ></div>
       </div>
-      <TypicalArticles mainTitle="相關文章" />
+      <TypicalArticles
+        mainTitle="相關文章"
+        articles={lastestArticles.slice(0, 8)}
+      />
     </>
   );
 };
