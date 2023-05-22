@@ -46,10 +46,6 @@ const ArticleTemplate: React.FC<IArticleTemplate> = ({ articleData }) => {
     return formattedDate;
   };
 
-  const imgDone = () => {
-    setImgIsLoading(false);
-  };
-
   return (
     <>
       <div className={styles.heroBanner}>
@@ -58,7 +54,11 @@ const ArticleTemplate: React.FC<IArticleTemplate> = ({ articleData }) => {
         ></div>
         <Image
           className={imgIsLoading ? '' : styles.show}
-          src={`https://image.u-car.com.tw/cartitleimage_${articleData.id}.jpg`}
+          src={
+            articleData.category === 1
+              ? `https://image.u-car.com.tw/carsummaryimage7_${articleData.id}.jpg`
+              : `https://image.u-car.com.tw/cartitleimage_${articleData.id}.jpg`
+          }
           alt="hero"
           width={585}
           height={390}
