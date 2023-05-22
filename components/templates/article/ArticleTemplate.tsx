@@ -10,6 +10,7 @@ export interface IArticleTemplate {
 
 const ArticleTemplate: React.FC<IArticleTemplate> = ({ articleData }) => {
   const [currentUrl, setCurrentUrl] = useState('');
+  const [imgIsLoading, setImgIsLoading] = useState(true);
 
   useEffect(() => {
     const imgEl = document.getElementsByClassName('lazy');
@@ -45,14 +46,23 @@ const ArticleTemplate: React.FC<IArticleTemplate> = ({ articleData }) => {
     return formattedDate;
   };
 
+  const imgDone = () => {
+    setImgIsLoading(false);
+  };
+
   return (
     <>
       <div className={styles.heroBanner}>
+        <div
+          className={`${styles.imgSkeleton} ${imgIsLoading ? styles.show : ''}`}
+        ></div>
         <Image
+          className={imgIsLoading ? '' : styles.show}
           src={`https://image.u-car.com.tw/cartitleimage_${articleData.id}.jpg`}
           alt="hero"
           width={585}
           height={390}
+          onLoadingComplete={() => setImgIsLoading(false)}
         />
       </div>
       <div className="article-body">
