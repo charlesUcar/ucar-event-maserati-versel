@@ -8,7 +8,7 @@ const PrimaryLayout: React.FC<IPrimaryLayout> = ({ children }) => {
   return (
     <>
       <Head>
-        <title>Primary Layout Example</title>
+        <title>義式百年傳奇 Maserati</title>
       </Head>
       <div id="mySidenav" className="sidenav" style={{ width: 0 + 'px' }}>
         <div className="sidenav_scroller">

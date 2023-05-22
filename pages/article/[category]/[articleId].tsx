@@ -1,4 +1,5 @@
 import axios from 'axios';
+import Head from 'next/head';
 import FooterLayout from '../../../components/layouts/footer/FooterLayout';
 import HeaderLayout from '../../../components/layouts/header/HeaderLayout';
 import PrimaryLayout from '../../../components/layouts/primary/PrimaryLayout';
@@ -80,11 +81,16 @@ export interface IArticle {
 
 const Article: NextPageWithLayout<IArticle> = ({ articleData }) => {
   return (
-    <div className="row article-page">
-      <main className="home">
-        <ArticleTemplate articleData={articleData} />
-      </main>
-    </div>
+    <>
+      <Head>
+        <title>{articleData.title}</title>
+      </Head>
+      <div className="row article-page">
+        <main className="home">
+          <ArticleTemplate articleData={articleData} />
+        </main>
+      </div>
+    </>
   );
 };
 
