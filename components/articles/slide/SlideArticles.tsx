@@ -66,7 +66,11 @@ const SlideArticles: React.FC<ISlideArticles> = ({ mainTitle, articles }) => {
                     className={styles.articleBox}
                   >
                     <Image
-                      src={`https://image.cache.u-car.com.tw/articlethumb_1_${article.id}.jpg`}
+                      src={
+                        article.category === 1
+                          ? `https://image.u-car.com.tw/carsummaryimage7_${article.id}.jpg`
+                          : `https://image.u-car.com.tw/cartitleimage_${article.id}.jpg`
+                      }
                       width={600}
                       height={400}
                       alt="cover"

@@ -15,6 +15,14 @@ const usedCarArticles = [
     category: 1,
     date: '2022/06/09',
   },
+  {
+    id: 70459,
+    title: '售價新臺幣628萬元、國內限定6輛，Maserati Ghibli Fragment快閃店現身',
+    summary:
+      'Maserati總代理今日 (5/11) 於位於臺北市信義區遠百信義A13的全臺首間Maserati快閃店，正式發表原廠與藤原浩於2021年6月聯名推出、全球僅175輛的Ghibli Fragment，並替這款國內僅爭取到6輛配額的特式車，開出新臺幣628萬元的售價，且同場展示Maserati x 藤原浩的限量潮流穿搭精品！',
+    category: 1,
+    date: '2022/05/11',
+  },
 ];
 
 export default usedCarArticles;

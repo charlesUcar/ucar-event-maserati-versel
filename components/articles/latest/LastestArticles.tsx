@@ -63,7 +63,11 @@ const LastestArticles: React.FC = () => {
         >
           <div className={styles.imgBox}>
             <Image
-              src={`https://image.u-car.com.tw/cartitleimage_${lastestArticles[0].id}.jpg`}
+              src={
+                lastestArticles[0].category === 1
+                  ? `https://image.u-car.com.tw/carsummaryimage7_${lastestArticles[0].id}.jpg`
+                  : `https://image.u-car.com.tw/cartitleimage_${lastestArticles[0].id}.jpg`
+              }
               width={585}
               height={390}
               alt="cover"

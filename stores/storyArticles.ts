@@ -17,6 +17,22 @@ const storyArticles = [
     category: 1,
     date: '2020/11/11',
   },
+  {
+    id: 16513,
+    title: '在起司香中遇見Maserati─Museo Panini巡禮',
+    summary:
+      '距離Maserati工廠約半小時車程、坐落於Hombre農場內的Museo Panini，雖然看起來就和農場裡收藏帕馬森起司的農舍一樣，既不像剛開幕的Museo Casa Enzo Ferrari擁有新潮的外觀、陳設也不是出自哪位設計大師之手，但是濃濃的起司香氣背後，這裡卻停放著全球最完整的Maserati車款收藏……',
+    category: 4,
+    date: '2012/07/31',
+  },
+  {
+    id: 24325,
+    title: 'Maserati百年傳奇─源自追求速度的熱情',
+    summary:
+      'Maserati，一個專事打造運動跑車的汽車品牌，麾下車款向來深藏義大利的浪漫跑車靈魂，且擁有十分優雅流暢的車身造型，自創廠以來便持續受到熱血車迷們的喜愛。而一切故事的起源，要從Maserati的大家長Rodolfo Maserati，和他的七個小孩開始說起。',
+    category: 4,
+    date: '2014/11/03',
+  },
 ];
 
 export default storyArticles;
