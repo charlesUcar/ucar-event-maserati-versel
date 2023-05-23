@@ -27,6 +27,11 @@
           font-weight: 500;
           line-height: 24px;
         }
+        &:hover {
+          .title {
+            color: hsla(213, 67%, 15%, 1);
+          }
+        }
       }
       // @media (max-width: 768px) {
       //   .articleBox {

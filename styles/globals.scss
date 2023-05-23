@@ -158,6 +158,10 @@ button {
   margin: 0 8px !important;
   width: 12px;
   height: 12px;
+  &:hover {
+    background: hsla(213, 68%, 15%, 1);
+    opacity: 1;
+  }
 }
 
 .videoArticles .swiper-pagination-bullet-active {
@@ -179,7 +183,7 @@ button {
 
 .slideArticle-swiper {
   .swiper-slide {
-    padding-bottom: 1rem;
+    padding-bottom: 1.75rem;
   }
 }
 
