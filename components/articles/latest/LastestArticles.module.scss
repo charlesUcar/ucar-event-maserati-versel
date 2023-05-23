@@ -116,10 +116,10 @@
         font-weight: 500;
         border: none;
         background-color: #ffc845;
-        color: hsla(213, 67%, 15%, 1);
+        color: #000;
         border-radius: 60px;
         &:hover {
-          background-color: #000;
+          background-color: hsla(213, 67%, 15%, 1);
           color: #fff;
         }
       }
