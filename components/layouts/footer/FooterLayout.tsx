@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 export interface IFooterLayout {}
 
 const FooterLayout: React.FC<IFooterLayout> = () => {
@@ -25,10 +27,14 @@ const FooterLayout: React.FC<IFooterLayout> = () => {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <span
-                    className="icon-facebook-squared"
-                    title="facebook"
-                  ></span>
+                  <span className="icon-facebook-squared" title="facebook">
+                    <Image
+                      src="/asset/svg/square-facebook.svg"
+                      width={22}
+                      height={22}
+                      alt="cover"
+                    />
+                  </span>
                 </a>
               </li>
               <li>
@@ -37,7 +43,14 @@ const FooterLayout: React.FC<IFooterLayout> = () => {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <span className="icon-youtube-play" title="Youtube"></span>
+                  <span className="icon-youtube-play" title="Youtube">
+                    <Image
+                      src="/asset/svg/youtube.svg"
+                      width={22}
+                      height={22}
+                      alt="cover"
+                    />
+                  </span>
                 </a>
               </li>
               <li>
@@ -46,7 +59,14 @@ const FooterLayout: React.FC<IFooterLayout> = () => {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <span className="icon-instagram-1" title="instagram"></span>
+                  <span className="icon-instagram-1" title="instagram">
+                    <Image
+                      src="/asset/svg/instagram.svg"
+                      width={22}
+                      height={22}
+                      alt="cover"
+                    />
+                  </span>
                 </a>
               </li>
             </ul>

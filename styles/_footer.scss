@@ -91,6 +91,8 @@
       display: block;
     }
     .social-link {
+      display: flex;
+      align-items: center;
       justify-content: center;
       margin: 1rem auto 0.5rem;
       border-bottom: #ccc 1px solid;
@@ -98,7 +100,7 @@
       font-size: 1.35rem;
       width: 80%;
       li {
-        margin: 0 0.25rem;
+        margin: 0 0.5rem;
       }
       a {
         color: white;

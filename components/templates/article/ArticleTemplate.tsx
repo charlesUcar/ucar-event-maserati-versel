@@ -17,7 +17,7 @@ const ArticleTemplate: React.FC<IArticleTemplate> = ({ articleData }) => {
     const imgEl = document.getElementsByClassName('lazy');
     for (var i = 0; i < imgEl.length; i++) {
       (imgEl[i] as HTMLImageElement).src =
-        'https://' + (imgEl[i] as HTMLImageElement).dataset.original;
+        'https:' + (imgEl[i] as HTMLImageElement).dataset.original;
     }
     setCurrentUrl(window.location.href);
   }, [articleData]);
