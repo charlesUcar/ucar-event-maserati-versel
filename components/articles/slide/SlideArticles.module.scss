@@ -16,6 +16,9 @@
       }
     }
     .articlesContainer {
+      @media screen and (min-width: 1169px) {
+        margin: 0 -24px;
+      }
       .articleBox {
         img {
           width: 100%;
