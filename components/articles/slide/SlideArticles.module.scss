@@ -1,6 +1,7 @@
 #slideArticles {
   margin: 64px 0;
   .container {
+    position: relative;
     max-width: 1170px;
     margin: auto;
     .mainTitle {
@@ -16,7 +17,6 @@
     }
     .articlesContainer {
       .articleBox {
-        // padding-bottom: 1rem;
         img {
           width: 100%;
           height: auto;
@@ -46,6 +46,6 @@
     }
   }
   @media (max-width: 1170px) {
-    padding: 0 24px;
+    padding: 0;
   }
 }

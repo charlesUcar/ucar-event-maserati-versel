@@ -6,6 +6,8 @@ body {
     Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
     Helvetica Neue, sans-serif;
   background: hsla(210, 16%, 93%, 1);
+  min-width: 100vw;
+  overflow-x: hidden;
 }
 
 a {
@@ -182,8 +184,43 @@ button {
 }
 
 .slideArticle-swiper {
+  &.swiper {
+    padding: 0 24px;
+    overflow: visible;
+    @media screen and (min-width: 1169px) {
+      overflow: hidden;
+    }
+  }
   .swiper-slide {
+    // margin: 0 24px;
     padding-bottom: 1.75rem;
+  }
+  .swiper-button-prev {
+    width: 56px;
+    height: 56px;
+    background: #fff;
+    color: hsla(227, 7%, 52%, 1);
+    transform: translate(-10px, -100%);
+    z-index: 9999;
+  }
+
+  .swiper-button-prev:after {
+    font-size: 16px;
+    font-weight: 800;
+  }
+
+  .swiper-button-next {
+    width: 56px;
+    height: 56px;
+    background: #fff;
+    color: hsla(227, 7%, 52%, 1);
+    transform: translate(10px, -100%);
+    z-index: 9999;
+  }
+
+  .swiper-button-next:after {
+    font-size: 16px;
+    font-weight: 800;
   }
 }
 

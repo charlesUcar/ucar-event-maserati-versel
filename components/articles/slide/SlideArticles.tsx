@@ -18,23 +18,25 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/free-mode';
+import 'swiper/css/navigation';
 import 'swiper/css/scrollbar';
 
 // import required modules
 import Link from 'next/link';
-import { FreeMode, Keyboard, Mousewheel, Scrollbar } from 'swiper';
+import React from 'react';
+import { FreeMode, Keyboard, Mousewheel, Navigation, Scrollbar } from 'swiper';
 
 const SlideArticles: React.FC<ISlideArticles> = ({ mainTitle, articles }) => {
   const breakpoints = {
     // when window width is >= 480px
     480: {
       slidesPerView: 2,
-      spaceBetween: 30,
+      spaceBetween: 25,
     },
     // when window width is >= 640px
     640: {
       slidesPerView: 3,
-      spaceBetween: 30,
+      spaceBetween: 25,
     },
   };
 
@@ -45,7 +47,7 @@ const SlideArticles: React.FC<ISlideArticles> = ({ mainTitle, articles }) => {
         <div className={styles.articlesContainer}>
           <Swiper
             slidesPerView={1}
-            spaceBetween={30}
+            spaceBetween={25}
             breakpoints={breakpoints}
             scrollbar={{
               hide: false,
@@ -55,7 +57,8 @@ const SlideArticles: React.FC<ISlideArticles> = ({ mainTitle, articles }) => {
             keyboard={{
               enabled: true,
             }}
-            modules={[Scrollbar, FreeMode, Mousewheel, Keyboard]}
+            modules={[Scrollbar, FreeMode, Mousewheel, Keyboard, Navigation]}
+            navigation={true}
             className="slideArticle-swiper"
           >
             {articles?.map((article) => {
