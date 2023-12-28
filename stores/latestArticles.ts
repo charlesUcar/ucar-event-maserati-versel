@@ -1,4 +1,44 @@
-const lastestArticles = [
+const latestArticles = [
+  {
+    id: 77073,
+    title: '首搭3鏡頭EyeSight，詮釋日系跨界新紀元—Subaru Crosstrek試駕',
+    summary:
+      '過去國內市場熟悉的日系跨界代表Subaru XV，歷經改朝換代，以Crosstrek之名重新回到臺灣，透過新世代家族設計語彙、休旅風格堆疊，搭載3鏡頭EyeSight 4.0駕駛輔助系統等配備，Crosstrek能夠再掀日系跨界車型旋風，擔當品牌的銷售主力，甚至越級挑戰相近價格區間的中型SUV級距嗎？',
+    category: 3,
+    date: '2023/12/27',
+  },
+  {
+    id: 76626,
+    title: '蒙地拿的驕傲─Maserati Grecale Modena長里程試駕',
+    summary:
+      '位於義大利中北部的Modena，不但有「速度矽谷」之稱，是義大利超級跑車與超級摩托車的故鄉，也是新世代Maserati車型編成的中堅主力，是為運動愛好者所設計、可讓駕駛人享受駕駛樂趣和氛圍的車型，就像這次試車組特別再次借來進行長里程試駕的Grecale Modena……',
+    category: 3,
+    date: '2023/12/22',
+  },
+  {
+    id: 76475,
+    title: '延續75年GT傳奇─Maserati新世代壯遊先鋒GranTurismo',
+    summary:
+      'Maserati不只在1947年推出A6 1500 Gran Turismo、開啟品牌打造高性能GT跑車的先河，並於1957年發表3500 GT，還接續著推出3200GT、第一代GranTurismo等經典，且在2022年時，為車迷們帶來了全球矚目、首度新增純電動力選項的第二代GranTurismo。',
+    category: 4,
+    date: '2023/12/21',
+  },
+  {
+    id: 75111,
+    title: '經典回歸─Maserati GranTurismo Trofeo義大利羅馬試駕，設計乘用篇',
+    summary:
+      '應Maserati與總代理臺灣蒙地拿之邀，U-CAR試車組再次來到義大利最知名的古城：羅馬 (Roma)，準備好好地試駕換上3.0升V6雙渦輪增壓「海王星 (Nettuno)」汽油引擎、改成四輪驅動設定的GranTurismo Trofeo，並在試駕行程的休息點，淺嚐了GranTurismo Folgore的純電魅力！',
+    category: 3,
+    date: '2023/06/06',
+  },
+  {
+    id: 74923,
+    title: '在羅馬與天空相遇─Maserati MC20 Cielo義大利羅馬試駕',
+    summary:
+      '儘管試車組在2022年5月、便曾經在臺灣試駕過以Maserati賽車部門縮寫：「MC」，加上發表年份：2020 年之「20」為名的MC20，但在正式端上GranTurismo這盤主菜前，Maserati不僅先替我們安排了Grecale Trofeo的試駕，還為我們帶來了加上義大利文「天空」為副車名的MC20 Cielo……',
+    category: 3,
+    date: '2023/05/19',
+  },
   {
     id: 74841,
     title: '一圓海神夢的快捷鍵─認識「Maserati Approved瑪莎拉蒂原廠認證中古車」',
@@ -13,7 +53,7 @@ const lastestArticles = [
     summary:
       '汽車是人類的創作，高端汽車是展現理念與科技的絕頂工藝。人與車是息息相關的，我們在Maserati Grecale身上體驗了豐富與精彩，這不只是新世代跨界休旅，還有發自內在的義大利文化底蘊。',
     category: 4,
-    date: '2023/2/15',
+    date: '2023/02/15',
   },
   {
     id: 74325,
@@ -66,4 +106,4 @@ const lastestArticles = [
   },
 ];
 
-export default lastestArticles;
+export default latestArticles;

@@ -4,6 +4,13 @@ import FooterLayout from '../../../components/layouts/footer/FooterLayout';
 import HeaderLayout from '../../../components/layouts/header/HeaderLayout';
 import PrimaryLayout from '../../../components/layouts/primary/PrimaryLayout';
 import ArticleTemplate from '../../../components/templates/article/ArticleTemplate';
+import {
+  latestArticlesPath,
+  moreArticlesPath,
+  roadTestArticlesPath,
+  storyArticlesPath,
+  usedCarArticlesPath,
+} from '../../../params/staticArticlesPath';
 import { NextPageWithLayout } from '../../page';
 
 export async function getStaticProps({ params }: any) {
@@ -36,86 +43,11 @@ export async function getStaticProps({ params }: any) {
 export const getStaticPaths = async () => {
   return {
     paths: [
-      // lastestArticles
-      {
-        params: { category: '4', articleId: '73948' },
-      },
-      {
-        params: { category: '4', articleId: '68523' },
-      },
-      // roadTestArticles
-      {
-        params: { category: '3', articleId: '74325' },
-      },
-      {
-        params: { category: '3', articleId: '74118' },
-      },
-      {
-        params: { category: '3', articleId: '74023' },
-      },
-      {
-        params: { category: '3', articleId: '70198' },
-      },
-      {
-        params: { category: '3', articleId: '70129' },
-      },
-      // storyArticles
-      {
-        params: { category: '1', articleId: '69750' },
-      },
-      {
-        params: { category: '1', articleId: '64135' },
-      },
-      {
-        params: { category: '4', articleId: '16513' },
-      },
-      {
-        params: { category: '4', articleId: '24325' },
-      },
-      // usedCarArticles
-      {
-        params: { category: '4', articleId: '74841' },
-      },
-      {
-        params: { category: '1', articleId: '70832' },
-      },
-      {
-        params: { category: '1', articleId: '70459' },
-      },
-      // moreArticles
-      {
-        params: { category: '1', articleId: '71269' },
-      },
-      {
-        params: { category: '1', articleId: '70544' },
-      },
-      {
-        params: { category: '1', articleId: '70084' },
-      },
-      {
-        params: { category: '1', articleId: '69910' },
-      },
-      {
-        params: { category: '1', articleId: '69562' },
-      },
-      {
-        params: { category: '1', articleId: '69477' },
-      },
-      {
-        params: { category: '1', articleId: '69328' },
-      },
-      {
-        params: { category: '1', articleId: '69206' },
-      },
-      {
-        params: { category: '1', articleId: '68914' },
-      },
-      {
-        params: { category: '1', articleId: '68854' },
-      },
-      {
-        params: { category: '1', articleId: '62206' },
-      },
+      ...latestArticlesPath,
+      ...roadTestArticlesPath,
+      ...storyArticlesPath,
+      ...usedCarArticlesPath,
+      ...moreArticlesPath,
     ], //indicates that no page needs be created at build time
     fallback: false, //indicates the type of fallback
   };
@@ -133,6 +65,8 @@ export interface IArticle {
 }
 
 const Article: NextPageWithLayout<IArticle> = ({ articleData }) => {
+  console.log(articleData);
+
   return (
     <>
       <Head>

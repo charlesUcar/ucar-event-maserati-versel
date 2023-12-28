@@ -6,6 +6,7 @@ const nextConfig = {
   images: {
     // loader: 'akamai',
     // path: '',
+    unoptimized: true,
     domains: [
       'i.pravatar.cc',
       'hips.hearstapps.com',

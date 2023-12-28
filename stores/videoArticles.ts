@@ -1,5 +1,23 @@
 const videoArticles = [
   {
+    id: 76009,
+    title:
+      '【專題】新車價650萬的海神休旅車 現在入手3XX萬！為揚再度手癢到Maserati原廠認證中古車挖寶｜Ghibli Fragment｜Levante Vulcano GranSport｜專題企劃',
+    summary:
+      '為揚透過Maserati認證中古車App找到兩臺限量車款，迫不及待想與網友們分享，讓夢想駕馭海神的準車主盡早圓夢！',
+    ytId: '8X0oFaUKkdw',
+    date: '2023/08/31',
+  },
+  {
+    id: 75241,
+    title:
+      '等交車等到心累累？為揚哥介紹給心癢想買瑪莎拉蒂的車迷朋友們另一個入手管道 堪比新車的車況與尊榮原廠禮遇｜Maserati Approved 原廠認證中古車(中文字幕)｜U-CAR 專題企劃',
+    summary:
+      '對於一些Maserati高性能車以及高度客製化的超跑來說，等車期動輒1-2年，所以很多消費者就會去選購中古車，不過像這樣高性能車款的車況與保修卻是最大的隱憂，所以這次U-CAR要帶著各位到Maserati Approved原廠認證中古車中心，看看他們是如何制定認證中古車的標準，達到如同新車一般的駕馭感受。',
+    ytId: 'qvigwVrcK24',
+    date: '2023/06/19',
+  },
+  {
     id: 74815,
     title:
       '【試駕】Maserati Grecale GT試駕：為揚表示「相見恨晚呀！」以入門車款加入競爭激烈的豪華中型SUV市場｜ADAS直接標配 、全景天窗、抬頭顯示通通有｜新車試駕',

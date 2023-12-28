@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
-import lastestArticles from '../../../stores/lastestArticles';
+import latestArticles from '../../../stores/latestArticles';
 import TypicalArticles from '../../articles/typical/TypicalArticles';
 import styles from './ArticleTemplate.module.scss';
 
@@ -180,7 +180,7 @@ const ArticleTemplate: React.FC<IArticleTemplate> = ({ articleData }) => {
       </div>
       <TypicalArticles
         mainTitle="相關文章"
-        articles={lastestArticles.slice(0, 8)}
+        articles={latestArticles.slice(1, 9)}
       />
     </>
   );

@@ -1,4 +1,4 @@
-import LastestArticles from '../components/articles/latest/LastestArticles';
+import LatestArticles from '../components/articles/latest/LatestArticles';
 import SlideArticles from '../components/articles/slide/SlideArticles';
 import TypicleArticles from '../components/articles/typical/TypicalArticles';
 import VideoArticles from '../components/articles/video/VideoArticles';
@@ -17,7 +17,7 @@ const Home: NextPageWithLayout = () => {
     <div className="row">
       <main className="home">
         <HeroBanner />
-        <LastestArticles />
+        <LatestArticles />
         <SlideArticles mainTitle="Maserati 品牌故事" articles={storyArticles} />
         <VideoArticles />
         <SlideArticles

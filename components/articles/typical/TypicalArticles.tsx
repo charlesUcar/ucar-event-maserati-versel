@@ -23,25 +23,27 @@ const TypicalArticles: React.FC<ITypicalArticles> = ({
         <div className={styles.mainTitle}>{mainTitle}</div>
         <div className={styles.articlesContainer}>
           {articles?.map((article) => {
-            return (
-              <Link
-                href={`/article/${article.category}/${article.id}`}
-                className={styles.articleBox}
-                key={article.title}
-              >
-                <Image
-                  src={
-                    article.category === 1
-                      ? `https://image.u-car.com.tw/carsummaryimage7_${article.id}.jpg`
-                      : `https://image.u-car.com.tw/cartitleimage_${article.id}.jpg`
-                  }
-                  width={300}
-                  height={200}
-                  alt="cover"
-                />
-                <div className={styles.title}>{article.title}</div>
-              </Link>
-            );
+            if (article.category !== 10) {
+              return (
+                <Link
+                  href={`/article/${article.category}/${article.id}`}
+                  className={styles.articleBox}
+                  key={article.title}
+                >
+                  <Image
+                    src={
+                      article.category === 1
+                        ? `https://image.u-car.com.tw/carsummaryimage7_${article.id}.jpg`
+                        : `https://image.u-car.com.tw/cartitleimage_${article.id}.jpg`
+                    }
+                    width={300}
+                    height={200}
+                    alt="cover"
+                  />
+                  <div className={styles.title}>{article.title}</div>
+                </Link>
+              );
+            }
           })}
         </div>
       </div>
